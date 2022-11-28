@@ -1,22 +1,23 @@
 import axios from "axios";
 
-export default function Service() {
-    const http = axios.create({
+class Service{
+    http = axios.create({
         baseURL: 'https://new-api.coco.gl/dashboard/intw'
     })
 
-    const getTopEngaged = async () => {
-        const response = await http.get('/top/engaged');
+    getTopEngaged = async () => {
+        const response = await this.http.get('/top/engaged');
         return response.data;
     }
 
-    const getTopFollowers = async () => {
-        const response = await http.get('/top/followers');
+    getTopFollowers = async () => {
+        const response = await this.http.get('/top/followers');
         return response.data;
     }
 
-    const getDetailsApi = async (id) => {
-        const response = await http.get(`/detail/${id}`);
+    getDetailsApi = async (id) => {
+        const response = await this.http.get(`/detail/${id}`);
         return response.data;
     }
 }
+export default new Service();
