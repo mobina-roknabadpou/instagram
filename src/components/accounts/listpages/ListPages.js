@@ -1,5 +1,5 @@
 import {SlOptionsVertical} from 'react-icons/sl';
-import './engaged.css';
+import '../../../styles/engaged.css';
 import { useNavigate } from "react-router-dom";
 
 export default function ListPages({data}) {
