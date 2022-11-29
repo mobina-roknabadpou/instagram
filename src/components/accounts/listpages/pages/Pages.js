@@ -20,7 +20,7 @@ export default function Pages(){
 
     return(
         <>
-            <div className='list-pages'>
+            <div className='pages'>
                 <div>
                     <ListPages data={engaged}/>
                 </div>
