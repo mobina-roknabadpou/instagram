@@ -2,6 +2,7 @@ import service from "../../../services/Service";
 import {useState, useEffect} from "react";
 import Service from "../../../services/Service";
 import ListPages from "../ListPages";
+import './pages.css'
 
 export default function Pages() {
     const [engaged, setEngaged] = useState([]);
