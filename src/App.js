@@ -1,5 +1,8 @@
 import './index.css';
-import EngagedPages from "./components/listPages/topEngaged/EngagedPages";
+import ListPages from "./components/accounts/listpages/ListPages";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Pages from "./components/accounts/listpages/pages/Pages";
+import DetailPages from "./components/accounts/detailpages/DetailPages";
 
 function App() {
   return (
