@@ -11,14 +11,14 @@ export default function ListPages({data}) {
 
     return (<>
         <div className='list' >
-            {data.map((item) => <div key={item.pageId} className='list-engaged' onClick={() => navigate(`/detail/${item.instagramId}`)}>
+            {data.map((item) => <div key={item.pageId} className='list-pages' onClick={() => navigate(`/detail/${item.instagramId}`)}>
                 <div className='left'>
                     <img className='profile' src={item.profilePicUrl}
                          onError={errorHandler}
                          style={{width: '40px'}}
                          alt=""
                     />
-                    <div className='identity'>
+                    <div className='userid'>
                         <div className='instagram-id'>@{item.instagramId}</div>
                         <div className='full-name'>{item.fullName}</div>
                     </div>
