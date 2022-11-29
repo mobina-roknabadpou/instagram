@@ -5,14 +5,13 @@ import {SlOptionsVertical} from 'react-icons/sl';
 import './engaged.css'
 
 export default function EngagedPages() {
-    const [engaged,setEngaged] = useState([]);
+    const [engaged, setEngaged] = useState([]);
 
     useEffect(() => {
-            loadEngaged();
-        },
-        [])
+        loadEngaged();
+    }, [])
 
-    const loadEngaged = async ()=>{
+    const loadEngaged = async () => {
         const result = await Service.getTopEngaged();
         console.log(result);
         setEngaged(result);
