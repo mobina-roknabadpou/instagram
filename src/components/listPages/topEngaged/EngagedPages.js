@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import Service from "../../services/Service";
-import {VscAccount} from 'react-icons/vsc';
 import {SlOptionsVertical} from 'react-icons/sl';
 import './engaged.css'
 
