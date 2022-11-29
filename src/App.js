@@ -1,3 +1,4 @@
+import './index.css';
 import EngagedPages from "./components/listPages/topEngaged/EngagedPages";
 
 function App() {
