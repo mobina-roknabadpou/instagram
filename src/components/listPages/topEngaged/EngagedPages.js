@@ -17,18 +17,10 @@ export default function EngagedPages() {
     }
 
     const errorHandler = (event) => {
-        event.currentTarget.src ='https://img.icons8.com/ios/50/null/user-male-circle.png';
+        event.currentTarget.src = 'https://img.icons8.com/ios/50/null/user-male-circle.png';
         event.currentTarget.className = 'error';
     }
 
-    const imageOnLoadHandler = (event) => {
-        console.log(
-            `The image with url of ${event.currentTarget.src} has been loaded`
-        );
-        if (event.currentTarget.className !== "error") {
-            event.currentTarget.className = "success";
-        }
-    };
     return (<>
         <div className='list'>
             {engaged.map((item) => <div key={item.pageId} className='list-engaged'>
@@ -46,12 +38,13 @@ export default function EngagedPages() {
                 <div className='right'>
                     <div className='category'>
                         <div className={item.parenIconUrl !== null && item.parentCategory !== null ? 'active' : 'none'}>
-                            <img src={item.parentIconUrl} style={{width:'15px'}}
+                            <img src={item.parentIconUrl} style={{width: '15px'}}
                                  alt=""
                             />
                             <span> {item.parentCategory}</span>
                         </div>
-                        <div className={item.category === null || item.category === "" ? 'none' : 'active'}>{item.category}</div>
+                        <div
+                            className={item.category === null || item.category === "" ? 'none' : 'active'}>{item.category}</div>
                     </div>
                     <div className='category-icon'>
                         <SlOptionsVertical size={16}/>
