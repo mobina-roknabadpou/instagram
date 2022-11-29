@@ -1,29 +1,17 @@
-import {useEffect, useState} from "react";
-import Service from "../../services/Service";
 import {SlOptionsVertical} from 'react-icons/sl';
-import './engaged.css'
+import './engaged.css';
+import { useNavigate } from "react-router-dom";
 
-export default function EngagedPages() {
-    const [engaged, setEngaged] = useState([]);
-
-    useEffect(() => {
-        loadEngaged();
-    }, [])
-
-    const loadEngaged = async () => {
-        const result = await Service.getTopEngaged();
-        console.log(result);
-        setEngaged(result);
-    }
-
+export default function ListPages({data}) {
+    const navigate = useNavigate();
     const errorHandler = (event) => {
         event.currentTarget.src = 'https://img.icons8.com/ios/50/null/user-male-circle.png';
         event.currentTarget.className = 'error';
     }
 
     return (<>
-        <div className='list'>
-            {engaged.map((item) => <div key={item.pageId} className='list-engaged'>
+        <div className='list' >
+            {data.map((item) => <div key={item.pageId} className='list-engaged' onClick={() => navigate(`/detail/${item.instagramId}`)}>
                 <div className='left'>
                     <img className='profile' src={item.profilePicUrl}
                          onError={errorHandler}
