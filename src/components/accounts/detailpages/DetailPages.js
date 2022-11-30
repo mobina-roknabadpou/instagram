@@ -9,8 +9,8 @@ export default function DetailPages() {
     let {userId: id} = useParams();
     const followers = details.followerCount;
     const avgLikes = details.avgLike;
-    const periodEngRate = details.engagement*100;
-    const totalEngRate = details.totalEngagement*100;
+    const periodEngRate = details.engagement * 100;
+    const totalEngRate = details.totalEngagement * 100;
 
     const handleFollowers = ()=>{
         if (followers > 1000000){
@@ -30,7 +30,7 @@ export default function DetailPages() {
 
     useEffect(() => {
         loadDetails();
-    })
+    }, [])
 
     const loadDetails = async () => {
         const result = await service.getDetailsApi(id);
@@ -53,8 +53,9 @@ export default function DetailPages() {
                         <div className='full-name'>{details.fullName}</div>
                     </div>
                 </div>
+
                 <div className='container-details'>
-                    <div className='row'>
+                    <div className='col'>
                         <div className='box' style={{backgroundColor: "cornflowerblue"}}>
                             <div className='inner-box' style={{color: "white"}}>
                                 <div className='icon'>
@@ -67,40 +68,22 @@ export default function DetailPages() {
                         <div className='box'>
                             <div className='inner-box'>
                                 <div className='icon'>
-                                    <span>Period Eng Rate</span>
-                                    <VscQuestion/>
-                                </div>
-                                <div className='title'>{periodEngRate.toFixed(2)}%</div>
-                            </div>
-                        </div>
-                        <div className='box' style={{backgroundColor: "mediumseagreen"}}>
-                            <div className='inner-box'>
-                                <div className='title'>{details.postPerDay}</div>
-                                <div className='icon'>
-                                    <span>Post Per day</span>
-                                    <VscQuestion/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='box' style={{backgroundColor: "orangered"}}>
-                            <div className='inner-box'>
-                                <div className='icon'>
-                                    <span>Avg Likes</span>
-                                    <VscQuestion/>
-                                </div>
-                                <div className='title'>{handleAvgLike()}</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='row'>
-                        <div className='box'>
-                            <div className='inner-box'>
-                                <div className='icon'>
                                     <span>Following</span>
                                     <VscQuestion/>
                                 </div>
                                 <div className='title'>{details.followingCount}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col">
+                        <div className='box' style={{backgroundColor: "orange"}}>
+                            <div className='inner-box'>
+                                <div className='icon'>
+                                    <span>Period Eng Rate</span>
+                                    <VscQuestion/>
+                                </div>
+                                <div className='title'>{periodEngRate.toFixed(2)}%</div>
                             </div>
                         </div>
                         <div className='box' style={{backgroundColor: "orange"}}>
@@ -112,13 +95,34 @@ export default function DetailPages() {
                                 <div className='title'>{totalEngRate.toFixed(2)}%</div>
                             </div>
                         </div>
+                    </div>
+
+                    <div className='col'>
                         <div className='box' style={{backgroundColor: "mediumseagreen"}}>
                             <div className='inner-box'>
+                                <div className='title'>{details.postPerDay}</div>
+                                <div className='icon'>
+                                    <span>Post Per day</span>
+                                    <VscQuestion/>
+                                </div>
+                            </div>
+                            <div className='inner-box totalPost'>
                                 <div className='icon'>
                                     <span>Total Posts</span>
                                     <VscQuestion/>
                                 </div>
                                 <div className='title'>{details.totalPost}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className='box' style={{backgroundColor: "orangered"}}>
+                            <div className='inner-box'>
+                                <div className='icon'>
+                                    <span>Avg Likes</span>
+                                    <VscQuestion/>
+                                </div>
+                                <div className='title'>{handleAvgLike()}</div>
                             </div>
                         </div>
                         <div className='box'>
