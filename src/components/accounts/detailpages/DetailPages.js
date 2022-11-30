@@ -12,19 +12,24 @@ export default function DetailPages() {
     const periodEngRate = details.engagement * 100;
     const totalEngRate = details.totalEngagement * 100;
 
-    const handleFollowers = ()=>{
-        if (followers > 1000000){
-            return followers/1000 + " M";
-        }else{
-            return followers/1000 + " K"
+
+    const handleFollowers = () => {
+        if (followers < 999999) {
+            return followers / 1000 + " k";
+        } else if (followers > 1000000) {
+            return followers / 1000000 + " M"
+        } else {
+            return followers;
         }
     }
 
-    const handleAvgLike = ()=>{
-        if (avgLikes > 1000000){
-            return avgLikes/1000 + " M";
-        }else{
-            return avgLikes/1000 + " K"
+    const handleAvgLike = () => {
+        if (avgLikes > 1000000) {
+            return avgLikes / 1000000 + " M";
+        } else if (avgLikes < 999999) {
+            return avgLikes / 1000 + " K"
+        } else {
+            return avgLikes
         }
     }
 
