@@ -1,4 +1,16 @@
-.headers{
+.headers {
+    text-align: center;
+    background-color: white;
+}
+
+.headers h1 {
+    font-size: 2rem;
+    padding: 40px;
+    font-family: "Bell MT";
+    font-weight: bolder;
+}
+
+.pages {
     display: flex;
     justify-content: space-around;
     align-items: center;
