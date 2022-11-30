@@ -14,6 +14,7 @@ body {
     display: flex;
     justify-content: start;
     align-items: center;
+
 }
 
 .profile-detail img {
@@ -37,13 +38,25 @@ body {
 
 .container-details {
     margin: 3px;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
 }
 
-.row {
+/*.row {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    flex-direction: row;*/
+/*}*/
+
+.col{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
+    flex-direction: column;
+    height: 250px;
+    width: 200px;
+    gap: 1rem;
+
 }
 
 .title{
@@ -51,22 +64,23 @@ body {
     font-size: 25px;
 
 }
-.row .box {
-    width: 200px;
-    height: 100px;
+.box {
+    width: 100%;
+    height: 100%;
     border: 1px solid #d0cfcf;
-    margin: 1rem;
     border-radius: 1rem;
     padding: 5px;
 }
 
-.row .box .inner-box {
+.inner-box {
     display: flex;
     flex-direction: column;
     line-height: 1.7;
     padding: 15px;
 }
-
+.totalPost{
+    margin-top: 30px;
+}
 .inner-box .icon {
     display: flex;
     flex-direction: row;
