@@ -29,22 +29,10 @@ export default function Pages() {
 
     return (
         <>
-            <div className='headers'>
-
-                <div>
-                    <h2>Top Engaged</h2>
-                </div>
-                <div>
-                    <h2>Top Followers</h2>
-                </div>
-            </div>
             <div className='pages'>
-                <div>
-                    <ListPages data={engaged}/>
-                </div>
-                <div>
-                    <ListPages data={followers}/>
-                </div>
+                    <ListPages data={engaged} title={"Top Engaged"} loading={loading}/>
+                    <ListPages data={followers} title={"Top Followers"} loading={loading}/>
+
             </div>
         </>);
 
