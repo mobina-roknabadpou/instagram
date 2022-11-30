@@ -12,18 +12,12 @@
 
 .pages {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: white;
-    margin: 0;
+}
 
-}
-.headers h2{
-    font-size: 1.3rem;
-    margin: 1em;
-    font-family: "Bell MT";
-}
-.pages{
+.list-pages {
     display: flex;
     justify-content: space-between;
     align-items: center;
