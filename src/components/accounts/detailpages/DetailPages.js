@@ -56,7 +56,7 @@ export default function DetailPages() {
                                     <span>Followers</span>
                                     <VscQuestion/>
                                 </div>
-                                <div className='title'>{handleFollowers()}</div>
+                                <div className='title'>{followers}</div>
                             </div>
                         </div>
                         <div className='box'>
@@ -116,7 +116,7 @@ export default function DetailPages() {
                                     <span>Avg Likes</span>
                                     <VscQuestion/>
                                 </div>
-                                <div className='title'>{handleAvgLike()}</div>
+                                <div className='title'>{avgLike}</div>
                             </div>
                         </div>
                         <div className='box'>
