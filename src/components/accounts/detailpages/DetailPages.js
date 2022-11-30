@@ -16,6 +16,12 @@ export default function DetailPages() {
         setDetails(result);
         console.log(id);
     }
+
+    const errorHandler = (event) => {
+        event.currentTarget.src = 'https://img.icons8.com/ios/50/null/user-male-circle.png';
+        event.currentTarget.className = 'error';
+    }
+
     return (
         <>
         </>
