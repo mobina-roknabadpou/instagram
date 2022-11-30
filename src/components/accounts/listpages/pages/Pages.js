@@ -31,7 +31,7 @@ export default function Pages() {
         <>
             <div className='pages'>
                     <ListPages data={engaged} title={"Top Engaged"} loading={loading}/>
-                    <ListPages data={followers} title={"Top Followers"} loading={loading}/>
+                    <ListPages data={followers} title={"Top Follower"} loading={loading}/>
 
             </div>
         </>);
