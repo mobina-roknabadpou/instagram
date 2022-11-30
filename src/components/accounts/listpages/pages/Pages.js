@@ -7,16 +7,24 @@ import './pages.css'
 export default function Pages() {
     const [engaged, setEngaged] = useState([]);
     const [followers, setFollowers] = useState([]);
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
         loadPages();
     }, [])
 
     const loadPages = async () => {
-        const result = await Service.getTopEngaged();
-        const result2 = await service.getTopFollowers();
-        console.log(result);
-        setEngaged(result);
-        setFollowers(result2)
+        setLoading(true)
+        try {
+            const result = await Service.getTopEngaged();
+            const result2 = await service.getTopFollowers();
+            console.log(result);
+            setEngaged(result);
+            setFollowers(result2)
+            setLoading(false);
+        }catch (error){
+            console.log(error.message())
+        }
+
     }
 
     return (
