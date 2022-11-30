@@ -32,7 +32,7 @@ export default function DetailPages() {
         loadDetails();
     })
 
-    const loadDetails = async ()=>{
+    const loadDetails = async () => {
         const result = await service.getDetailsApi(id);
         setDetails(result);
         console.log(id);
@@ -45,6 +45,94 @@ export default function DetailPages() {
 
     return (
         <>
+            <div className='detail-pages'>
+                <div className='profile-detail'>
+                    <img src={details.profilePic} alt="" onError={errorHandler}/>
+                    <div>
+                        <div className='userid' style={{color: "blue"}}>@{details.instagramId}</div>
+                        <div className='full-name'>{details.fullName}</div>
+                    </div>
+                </div>
+                <div className='container-details'>
+                    <div className='row'>
+                        <div className='box' style={{backgroundColor: "cornflowerblue"}}>
+                            <div className='inner-box' style={{color: "white"}}>
+                                <div className='icon'>
+                                    <span>Followers</span>
+                                    <VscQuestion/>
+                                </div>
+                                <div className='title'>{handleFollowers()}</div>
+                            </div>
+                        </div>
+                        <div className='box'>
+                            <div className='inner-box'>
+                                <div className='icon'>
+                                    <span>Period Eng Rate</span>
+                                    <VscQuestion/>
+                                </div>
+                                <div className='title'>{periodEngRate.toFixed(2)}%</div>
+                            </div>
+                        </div>
+                        <div className='box' style={{backgroundColor: "mediumseagreen"}}>
+                            <div className='inner-box'>
+                                <div className='title'>{details.postPerDay}</div>
+                                <div className='icon'>
+                                    <span>Post Per day</span>
+                                    <VscQuestion/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='box' style={{backgroundColor: "orangered"}}>
+                            <div className='inner-box'>
+                                <div className='icon'>
+                                    <span>Avg Likes</span>
+                                    <VscQuestion/>
+                                </div>
+                                <div className='title'>{handleAvgLike()}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='row'>
+                        <div className='box'>
+                            <div className='inner-box'>
+                                <div className='icon'>
+                                    <span>Following</span>
+                                    <VscQuestion/>
+                                </div>
+                                <div className='title'>{details.followingCount}</div>
+                            </div>
+                        </div>
+                        <div className='box' style={{backgroundColor: "orange"}}>
+                            <div className='inner-box'>
+                                <div className='icon'>
+                                    <span>Total Eng Rate</span>
+                                    <VscQuestion/>
+                                </div>
+                                <div className='title'>{totalEngRate.toFixed(2)}%</div>
+                            </div>
+                        </div>
+                        <div className='box' style={{backgroundColor: "mediumseagreen"}}>
+                            <div className='inner-box'>
+                                <div className='icon'>
+                                    <span>Total Posts</span>
+                                    <VscQuestion/>
+                                </div>
+                                <div className='title'>{details.totalPost}</div>
+                            </div>
+                        </div>
+                        <div className='box'>
+                            <div className='inner-box'>
+                                <div className='icon'>
+                                    <span>Avg comments</span>
+                                    <VscQuestion/>
+                                </div>
+                                <div className='title'>{details.avgComment}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 
