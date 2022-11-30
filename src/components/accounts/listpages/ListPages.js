@@ -1,6 +1,6 @@
 import {SlOptionsVertical} from 'react-icons/sl';
-import '../../../styles/engaged.css';
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import Header from "./pages/header/Header";
 
 export default function ListPages({data}) {
     const navigate = useNavigate();
