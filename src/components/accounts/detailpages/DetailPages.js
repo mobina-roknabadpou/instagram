@@ -7,31 +7,20 @@ import {VscQuestion} from 'react-icons/vsc'
 export default function DetailPages() {
     const [details, setDetails] = useState({});
     let {userId: id} = useParams();
-    const followers = details.followerCount;
-    const avgLikes = details.avgLike;
     const periodEngRate = details.engagement * 100;
     const totalEngRate = details.totalEngagement * 100;
 
-
-    const handleFollowers = () => {
-        if (followers < 999999) {
-            return followers / 1000 + " k";
-        } else if (followers > 1000000) {
-            return followers / 1000000 + " M"
-        } else {
-            return followers;
+    const handler = (title) => {
+        console.log(title)
+        if (title >= 1000 && title < 9999) {
+            return `${title/1000} K`;
+        }else if (title >= 1000000) {
+            return `${title/1000000} M`;
         }
+        return title;
     }
-
-    const handleAvgLike = () => {
-        if (avgLikes > 1000000) {
-            return avgLikes / 1000000 + " M";
-        } else if (avgLikes < 999999) {
-            return avgLikes / 1000 + " K"
-        } else {
-            return avgLikes
-        }
-    }
+    const followers = handler(details.followerCount);
+    const avgLike = handler(details.avgLike);
 
     useEffect(() => {
         loadDetails();
