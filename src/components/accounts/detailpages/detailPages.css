@@ -1,0 +1,91 @@
+body {
+    background-color: #d0cfcf;
+}
+
+.detail-pages {
+    background-color: white;
+    margin: 10rem auto;
+    width: 65%;
+    padding: 10px;
+    border: 3px solid black;
+}
+
+.profile-detail {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.profile-detail img {
+    border-radius: 50%;
+    width: 50px;
+    object-fit: cover;
+    margin: 5px 20px;
+    border: 2px solid blue;
+}
+
+.full-name {
+    font-size: 1.2em;
+    font-weight: bolder;
+
+}
+
+.userid {
+    font-size: 1em;
+    font-family: "Bell MT"
+}
+
+.container-details {
+    margin: 3px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.title{
+    font-weight: bolder;
+    font-size: 25px;
+
+}
+.row .box {
+    width: 200px;
+    height: 100px;
+    border: 1px solid #d0cfcf;
+    margin: 1rem;
+    border-radius: 1rem;
+    padding: 5px;
+}
+
+.row .box .inner-box {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.7;
+    padding: 15px;
+}
+
+.inner-box .icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.inner-box .icon span{
+    margin-right: 5px;
+    font-size: 1em;
+    font-family: customFont;
+}
+
+@media screen and (max-width: 1200px) {
+    .detail-pages {
+        width: 100%;
+    }
+
+    .row {
+        flex-wrap: wrap;
+    }
+}
