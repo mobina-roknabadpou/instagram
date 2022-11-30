@@ -3,6 +3,10 @@
   font-size: 100%;
   margin: 0;
 }
+@font-face {
+  font-family: customFont;
+  src: url("./styles/font/Mermaid1001.ttf");
+}
 body{
   background-color: grey;
 }
